@@ -1,7 +1,10 @@
 package com.aula.projeto.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.PastOrPresent;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 
@@ -12,13 +15,16 @@ public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotBlank(message = "Nome não pode ser vazio.")
     private String name;
+    @Column(unique = true)
     private String cpf;
     private Double income;
-    private LocalDateTime birthDate;
+    @PastOrPresent(message = "Data de nascimento não pode ser futura")
+    private LocalDate birthDate;
     private Integer children;
 
-    public Client(Long id, String name, String cpf, Double income, LocalDateTime birthDate, Integer children) {
+    public Client(Long id, String name, String cpf, Double income, LocalDate birthDate, Integer children) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
@@ -62,11 +68,11 @@ public class Client {
         this.income = income;
     }
 
-    public LocalDateTime getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDateTime birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
