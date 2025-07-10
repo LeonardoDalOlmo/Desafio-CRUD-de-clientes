@@ -11,12 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.aula.projeto.dto.ClientDTO;
 import com.aula.projeto.services.ClientService;
 
 import jakarta.validation.Valid;
 
+@RestController
 public class ClientController {
 
     @Autowired

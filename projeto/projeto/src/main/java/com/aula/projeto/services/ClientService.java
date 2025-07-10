@@ -8,10 +8,12 @@ import com.aula.projeto.services.Exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import com.aula.projeto.dto.ClientDTO;
 import com.aula.projeto.entities.Client;
 
+@Service
 public class ClientService {
 
     @Autowired
