@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 
 @Entity
 @Table(name = "tb_client")
